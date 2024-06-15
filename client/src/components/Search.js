@@ -21,8 +21,8 @@ export default function Search() {
         setload(true);
         const postData = { from, to };
 
-    //   connect to backend at end
-        const response =await axios.post('http://localhost//Resttttt', {from, to} )
+    
+        const response =await axios.post('http://localhost:8000/find', {from, to} )
         setload(false);
         console.log(response.data);
         if( response.data == "ERROR"){
