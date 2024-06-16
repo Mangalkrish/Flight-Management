@@ -21,7 +21,7 @@ export default function Search() {
         setload(true);
         const postData = { from, to };
 
-    
+      
         const response =await axios.post('http://localhost:8000/find', {from, to} )
         setload(false);
         console.log(response.data);
