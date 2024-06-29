@@ -6,12 +6,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import axios from 'axios';
 
-import { useNavigate } from 'react-router-dom';
-
 export default function Login({ show, onClose }) {
 
   // const navigate=useNavigate();
-
   const loginRef = useRef();
 
   const signupRef = useRef();
@@ -29,10 +26,6 @@ export default function Login({ show, onClose }) {
   const [successMessage, setSuccessMessage] = useState('');
   const [passwordMatchError, setPasswordMatchError] = useState(false);
   const [emptyFieldError, setEmptyFieldError] = useState(false);
-
-
-
-
   useEffect(() => {
 
     if (show) {
@@ -98,21 +91,22 @@ export default function Login({ show, onClose }) {
 
     console.log(res.data);
     if (res.data !== "err") {
-
-      
+      setEmail("");
+      setName("");
+      setPhoneNumber("");
+      setConfirmPass("");
+      setPass("")
       setSuccessMessage('Login successful!');
-     
+      
       localStorage.setItem("email" , res.data.email);
       localStorage.setItem("name" , res.data.name);
       localStorage.setItem("phoneNumber" , res.data,phoneNumber);
-
-      // setTimeout(()=>{
-
-      //   navigate('/')
-
-      // },100)
-
+      
       setSuccess(true);
+      window.location.reload();
+
+     
+
 
     } else {
 
@@ -154,12 +148,17 @@ export default function Login({ show, onClose }) {
     console.log(res.data);
 
     if (res.data === "OK") {
-
-       localStorage.setItem("name", name);
+      setEmail("");
+      setName("");
+      setPhoneNumber("");
+      setConfirmPass("");
+      setPass("")
+      localStorage.setItem("name", name);
       localStorage.setItem("email" , email);
       localStorage.setItem("phoneNumber" , phoneNumber);
 
       setSuccessMessage('Registration successful!');
+      
 
       // setTimeout(()=>{
 
@@ -175,9 +174,13 @@ export default function Login({ show, onClose }) {
 
     }
 
+    
   };
-
-
+  
+  
+  if (success) {
+    window.location.reload();
+  }
 
 
   const handleBackdropClick = (e) => {

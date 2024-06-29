@@ -30,6 +30,7 @@ app.use(cors())
 
 
 
+
 const dburl=process.env.ATLAS_URL
 
 const connectdb=async()=>{
@@ -37,7 +38,7 @@ const connectdb=async()=>{
     try{
 
         const conn=await mongoose.connect(dburl)
-
+        // Flight.insertMany(dummyFlights);
         console.log("connected to db")
 
         
@@ -182,17 +183,16 @@ app.get('/logout', (req, res) => {
 
 });
 
-// app.post('/:id/reviews' ,async(req,res)=>{
-//     const { rating , comment} =req.body
-//     let Listing= await book.findById(req.params.id);
+app.post('/reviews' ,async(req,res)=>{
+    const crtd=await reviews.create({
+        comment:req.body.comment,
+        author:req.body.name,
+        rating:req.body.rating,
+        airline:req.body.airline
 
-//     let newreview = new reviews({rating , comment});
-//     newreview.author=req.user._id;
-//     book.reviews.push(newreview);
-//     await newreview.save();
-//     await  book.save();
-//     req.send('Done');
-// })
+    })
+    console.log(crtd);
+})
 
 
 app.post('/find',async(req,res)=> {
@@ -255,11 +255,18 @@ app.post("/booking",async(req,res)=>{
     
 
 })
+app.post("/getReviews",async(req,res)=>{
+    console.log(req.body.airline)
+    const ans=await reviews.find({airline:req.body.airline})
+    console.log(ans)
+    res.json(ans);
+    
 
+})
 app.post("/myFlights",async(req,res)=>{
 
     const ans=await book.find({user:req.body.email})
-
+    console.log((ans))
     res.json(ans);
 
 })

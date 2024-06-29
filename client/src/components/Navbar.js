@@ -73,9 +73,7 @@ const Navbar = () => {
       <nav className="nav">
 
         <div className="logo">
-
-          <a href="#home">MyLogo</a>
-
+          <img src='https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbUtmY3bSJTwp8VXDDh-ijBwzXuvPO0o8uPip8rko1H-2czjuVNJg05yFihxmD493XUiGLNHbnZqO8UH51qmxSB3XQSekc8Dg=w1920-h970'/>
         </div>
 
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './nav.css';
 
-import './notification.css'; // Import the new CSS file for notifications
+import './notification.css'; 
 
 
 

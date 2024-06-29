@@ -1,6 +1,5 @@
 const mongoose=require('mongoose');
-const Review=require("./review.js");
-const User=require("./UserSchema.js")
+
 const schema= mongoose.Schema;
 
 const reviewSchema= new schema({
@@ -15,8 +14,9 @@ const reviewSchema= new schema({
         default: Date.now(),
     },
     author:{
-        type:schema.Types.ObjectId,
-        ref:"User"
-    }
+        type:String,
+        
+    },
+    airline:String
 });
 module.exports=mongoose.model("reviews",reviewSchema);
