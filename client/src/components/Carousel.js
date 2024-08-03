@@ -20,7 +20,7 @@ const Carousle = () => {
       <div className='carousel'>
       <div  className='Item'>
         <img className='flight'
-          src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpiha1N-2GTJeOkZSEahSVbtWz84D7E1hewAdChLx7Pl8B3h1UhdkvQxI0ikXG9Nz_qjaF9CUgmKGiyRvdBCNxtxKd7DuXZUjWmQ=w1920-h868-rw-v1"
+          src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihaNR9j_ERBmHp0wHC9qW-evQY-mHjqs17YTl0_Gy2vsYACah2XYsPAf_sysDDZz8_9Er1At3GX477vFUQP82tCgEIVoEwhKUA=w1920-h912-rw-v1"
           alt="image 1"
         />
       </div>

@@ -87,7 +87,7 @@ export default function Login({ show, onClose }) {
 
     }
     const res = await axios.post("http://localhost:8000/login", { email, password });
-    console.log(res.data);
+    // console.log(res.data);
 
     console.log(res.data);
     if (res.data !== "err") {
